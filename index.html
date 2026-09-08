@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Prabesh Malla | Personal Portfolio</title>
+
+  <!-- Bootstrap 5 -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --primary: #111111;
+      --secondary: #666666;
+      --light: #f7f7f7;
+      --border: #e9e9e9;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--primary);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      padding: 15px 0;
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: #111 !important;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #111;
+      border-radius: 50%;
+      margin-left: 3px;
+    }
+
+    .nav-link {
+      color: #555 !important;
+      font-size: .92rem;
+      font-weight: 500;
+      margin-left: 18px;
+      transition: .3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #000 !important;
+    }
+
+    .nav-btn {
+      background: #111;
+      color: #fff !important;
+      padding: 9px 18px !important;
+      border-radius: 50px;
+      margin-left: 20px;
+    }
+
+    .nav-btn:hover {
+      background: #333;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 20%, #eeeeee 0, transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+      padding-top: 90px;
+      overflow: hidden;
+    }
+
+    .hero-small {
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #777;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 800;
+      letter-spacing: -4px;
+      line-height: .98;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #777;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      color: #666;
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    .btn-dark-custom {
+      background: #111;
+      border: 1px solid #111;
+      color: #fff;
+      padding: 13px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .btn-dark-custom:hover {
+      background: #333;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-custom {
+      border: 1px solid #ddd;
+      color: #111;
+      padding: 13px 25px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .btn-outline-custom:hover {
+      border-color: #111;
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image {
+      width: 390px;
+      height: 480px;
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+      filter: grayscale(100%);
+      background: #e8e8e8;
+      box-shadow: 0 30px 80px rgba(0,0,0,.12);
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: 25px;
+      left: -20px;
+      background: rgba(255,255,255,.95);
+      padding: 17px 20px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.12);
+      min-width: 180px;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 1.2rem;
+    }
+
+    .floating-card small {
+      color: #777;
+    }
+
+    /* ================= COMMON ================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      color: #666;
+      max-width: 650px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-box {
+      background: #f7f7f7;
+      border-radius: 28px;
+      padding: 45px;
+    }
+
+    .info-item {
+      padding: 18px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .info-item:last-child {
+      border-bottom: 0;
+    }
+
+    .info-item span {
+      color: #888;
+      display: block;
+      font-size: .8rem;
+      margin-bottom: 3px;
+    }
+
+    .info-item strong {
+      font-size: .98rem;
+    }
+
+    /* ================= SKILLS ================= */
+
+    .skill-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      height: 100%;
+      transition: .3s;
+      background: #fff;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 45px rgba(0,0,0,.08);
+    }
+
+    .skill-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      color: #fff;
+      border-radius: 15px;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .skill-card h5 {
+      font-weight: 700;
+    }
+
+    .skill-card p {
+      color: #777;
+      font-size: .9rem;
+      margin-bottom: 0;
+    }
+
+    /* ================= KARATE ================= */
+
+    .karate-section {
+      background: #111;
+      color: #fff;
+    }
+
+    .karate-section .section-label {
+      color: #999;
+    }
+
+    .karate-section .section-description {
+      color: #aaa;
+    }
+
+    .achievement {
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 25px;
+      height: 100%;
+      transition: .3s;
+    }
+
+    .achievement:hover {
+      background: #1b1b1b;
+      transform: translateY(-5px);
+    }
+
+    .achievement-number {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .achievement h5 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .achievement p {
+      color: #999;
+      font-size: .85rem;
+      margin-bottom: 0;
+    }
+
+    /* ================= EDUCATION ================= */
+
+    .timeline {
+      position: relative;
+      max-width: 850px;
+      margin: 50px auto 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #ddd;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 55px;
+      margin-bottom: 45px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 7px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #111;
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 1px #111;
+    }
+
+    .timeline-item small {
+      color: #888;
+      font-weight: 600;
+    }
+
+    .timeline-item h4 {
+      font-weight: 700;
+      margin: 5px 0;
+    }
+
+    .timeline-item p {
+      color: #777;
+      margin: 0;
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      overflow: hidden;
+      height: 100%;
+      background: #fff;
+      transition: .3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.09);
+    }
+
+    .project-visual {
+      height: 220px;
+      background: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: #111;
+    }
+
+    .project-content {
+      padding: 27px;
+    }
+
+    .project-content h4 {
+      font-weight: 700;
+    }
+
+    .project-content p {
+      color: #777;
+      font-size: .9rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: .72rem;
+      padding: 5px 10px;
+      border-radius: 50px;
+      background: #f2f2f2;
+      margin: 3px 2px;
+      color: #555;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-box {
+      background: #f7f7f7;
+      border-radius: 30px;
+      padding: 60px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #111;
+      margin: 20px 0;
+      font-weight: 600;
+    }
+
+    .contact-link i {
+      width: 45px;
+      height: 45px;
+      background: #111;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 30px 0;
+      font-size: .85rem;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    .social-icons a {
+      color: #aaa;
+      font-size: 1.1rem;
+      margin-left: 18px;
+      transition: .3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    /* ================= SCROLL TOP ================= */
+
+    #topBtn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border: 0;
+      background: #111;
+      color: #fff;
+      border-radius: 50%;
+      display: none;
+      z-index: 999;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all .8s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 991px) {
+
+      .navbar-collapse {
+        background: #fff;
+        padding: 15px;
+        border-radius: 15px;
+        margin-top: 10px;
+      }
+
+      .nav-link {
+        margin-left: 0;
+        padding: 10px 0 !important;
+      }
+
+      .nav-btn {
+        display: inline-block;
+        margin-left: 0;
+        margin-top: 8px;
+      }
+
+      .hero {
+        text-align: center;
+        padding-top: 120px;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-image-wrap {
+        margin-top: 60px;
+      }
+
+      .floating-card {
+        left: 5px;
+      }
+    }
+
+    @media (max-width: 575px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-image {
+        width: 310px;
+        height: 390px;
+      }
+
+      .floating-card {
+        min-width: 150px;
+        padding: 13px;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 30px 22px;
+      }
+
+      .btn-dark-custom,
+      .btn-outline-custom {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+
+    <a class="navbar-brand" href="#home">
+      Prabesh<span class="brand-dot"></span>
+    </a>
+
+    <button
+      class="navbar-toggler border-0 shadow-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <i class="bi bi-list fs-2"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#karate">Karate</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link nav-btn" href="#contact">
+            Let's Talk
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-7">
+
+        <div class="fade-up">
+
+          <div class="hero-small">
+            Welcome to my portfolio
+          </div>
+
+          <h1>
+            Hi, I'm<br>
+            <span>Prabesh Malla.</span>
+          </h1>
+
+          <p class="hero-description">
+            A passionate student, karate athlete and aspiring technology
+            professional who loves learning, creating and building meaningful
+            digital experiences.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 justify-content-lg-start justify-content-center">
+
+            <a href="#about" class="btn btn-dark-custom">
+              Explore My Journey
+              <i class="bi bi-arrow-down ms-2"></i>
+            </a>
+
+            <a href="#contact" class="btn btn-outline-custom">
+              Contact Me
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-lg-5">
+
+        <div class="hero-image-wrap fade-up">
+
+          <!-- Replace this URL with your own photo -->
+          <img
+            class="hero-image"
+            src="Gemini_Generated_Image_b5yjhlb5yjhlb5yj.jpeg"
+            alt="Prabesh Malla"
+          >
+
+          <div class="floating-card">
+            <strong>🥋 Black Belt</strong>
+            <small>Karate Athlete</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6 fade-up">
+
+        <div class="section-label">About Me</div>
+
+        <h2 class="section-title">
+          Building my future,<br>
+          one step at a time.
+        </h2>
+
+        <p class="section-description">
+          I'm Prabesh Malla, a management and computer science student
+          interested in technology, entrepreneurship, web development and
+          sports. I enjoy learning new skills and turning ideas into useful
+          projects.
+        </p>
+
+        <p class="section-description">
+          Alongside my studies, karate has taught me discipline, consistency,
+          confidence and the importance of never giving up.
+        </p>
+
+      </div>
+
+
+      <div class="col-lg-6 fade-up">
+
+        <div class="about-box">
+
+          <div class="info-item">
+            <span>Name</span>
+            <strong>Prabesh Malla</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Education</span>
+            <strong>Management + Computer Science</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Future Goal</span>
+            <strong>Technology & IT Professional</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Sport</span>
+            <strong>Karate — Black Belt (3rd DAN) </strong>
+          </div>
+
+          <div class="info-item">
+            <span>Based In</span>
+            <strong>Kanchanpur,Sudurpashchim, Nepal</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" style="background:#fafafa;">
+
+  <div class="container">
+
+    <div class="text-center fade-up">
+
+      <div class="section-label">What I Do</div>
+
+      <h2 class="section-title">
+        Skills & Interests
+      </h2>
+
+      <p class="section-description mx-auto">
+        A growing collection of technical, creative and personal skills
+        that I'm developing through study and real-world projects.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4 mt-4">
+
+      <div class="col-md-6 col-lg-3 fade-up">
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            <i class="bi bi-code-slash"></i>
+          </div>
+
+          <h5>Web Development</h5>
+
+          <p>
+       C, HTML, CSS, Python, Bootstrap, and basic JavaScript
+       for creating responsive websites.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 fade-up">
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            <i class="bi bi-laptop"></i>
+          </div>
+
+          <h5>Technology</h5>
+
+          <p>
+            Interested in software, computers, databases,digital marketing
+            networking and modern digital tools.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 fade-up">
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            <i class="bi bi-palette"></i>
+          </div>
+
+          <h5>Design</h5>
+
+          <p>
+            Creating clean posters, social media graphics,
+            banners and digital branding concepts.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 fade-up">
+
+        <div class="skill-card">
+
+          <div class="skill-icon">
+            <i class="bi bi-lightning-charge"></i>
+          </div>
+
+          <h5>Leadership</h5>
+
+          <p>
+            Experience in sports leadership, volunteering,
+            events and team activities.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= KARATE ================= -->
+
+<section id="karate" class="karate-section">
+
+  <div class="container">
+
+    <div class="row align-items-end mb-5">
+
+      <div class="col-lg-7 fade-up">
+
+        <div class="section-label">
+          My Martial Arts Journey
+        </div>
+
+        <h2 class="section-title">
+          Discipline. Focus.<br>
+          Never Give Up.
+        </h2>
+
+      </div>
+
+      <div class="col-lg-5 fade-up">
+
+        <p class="section-description">
+          Karate is more than a sport for me. It has helped me develop
+          discipline, confidence, patience and the mindset to keep improving.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="row g-4">
+
+      <div class="col-md-6 col-lg-3 fade-up">
+
+        <div class="achievement">
+
+          <div class="achievement-number">
+            🥋
+          </div>
+
+          <h5>Black Belt (3rd DAN)</h5>
+
+          <p>
+            Dedicated martial artist with a strong passion for kata.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 fade-up">
+
+        <div class="achievement">
+
+          <div class="achievement-number">
+            🥇
+          </div>
+
+          <h5>Province Champion</h5>
+
+          <p>
+            Gold medal achievement in Sudurpashchim Province competition.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 fade-up">
+
+        <div class="achievement">
+
+          <div class="achievement-number">
+            🏆
+          </div>
+
+          <h5>National Events</h5>
+
+          <p>
+            Participated and earned medals in national-level karate events.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6 col-lg-3 fade-up">
+
+        <div class="achievement">
+
+          <div class="achievement-number">
+            🎯
+          </div>
+
+          <h5>Future Goal</h5>
+
+          <p>
+            Become one of Nepal's strongest and most consistent kata athletes.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+  <div class="container">
+
+    <div class="text-center fade-up">
+
+      <div class="section-label">
+        Education
+      </div>
+
+      <h2 class="section-title">
+        My Learning Journey
+      </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+      <div class="timeline-item fade-up">
+
+        <div class="timeline-dot"></div>
+
+        <small>School</small>
+
+        <h4>
+          Jyoti English Boarding School
+        </h4>
+
+        <p>
+          Completed SEE with a foundation in academic,
+          computer and extracurricular learning.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item fade-up">
+
+        <div class="timeline-dot"></div>
+
+        <small>Higher Secondary Education</small>
+
+        <h4>
+          Sudur Pashchimanchal Secondary School 
+        </h4>
+
+        <p>
+          Studying subjects including English, Nepali, Account,
+          Economics, Social Studies and Computer Science.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item fade-up">
+
+        <div class="timeline-dot"></div>
+
+        <small> Present Study</small>
+
+        <h4>
+          Information Technology and Management / BITM
+        </h4>
+
+        <p>
+         Currently studying Bachelor in Information Technology Management (BITM),
+          developing skills in both information technology and management to build 
+          a career in the digital and business field.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects" style="background:#fafafa;">
+
+  <div class="container">
+
+    <div class="fade-up">
+
+      <div class="section-label">
+        Selected Projects
+      </div>
+
+      <h2 class="section-title">
+        Things I'm Building
+      </h2>
+
+      <p class="section-description">
+        Some of my personal and business-focused ideas and projects.
+      </p>
+
+    </div>
+
+
+    <div class="row g-4 mt-4">
+
+
+      <!-- Project 1 -->
+
+      <div class="col-lg-4 fade-up">
+
+        <div class="project-card">
+
+          <div class="project-visual">
+            <i class="bi bi-cart3"></i>
+          </div>
+
+          <div class="project-content">
+
+            <h4>NEPOMART</h4>
+
+            <p>
+              A modern e-commerce concept focused on gadgets and
+              everyday technology products.
+            </p>
+
+            <span class="tag">E-Commerce</span>
+            <span class="tag">Branding</span>
+            <span class="tag">Web</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Project 2 -->
+
+      <div class="col-lg-4 fade-up">
+
+        <div class="project-card">
+
+          <div class="project-visual">
+            <i class="bi bi-house-door"></i>
+          </div>
+
+          <div class="project-content">
+
+            <h4>Basai Nepal</h4>
+
+            <p>
+              A room-rental and property listing platform concept
+              designed for people searching for places to live in Nepal.
+            </p>
+
+            <span class="tag">Real Estate</span>
+            <span class="tag">Web App</span>
+            <span class="tag">Nepal</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Project 3 -->
+
+      <div class="col-lg-4 fade-up">
+
+        <div class="project-card">
+
+          <div class="project-visual">
+            <i class="bi bi-globe2"></i>
+          </div>
+
+          <div class="project-content">
+
+            <h4>Karate Academy</h4>
+
+            <p>
+              A digital platform concept for managing karate classes,
+              students, training and academy information.
+            </p>
+
+            <span class="tag">Karate</span>
+            <span class="tag">Management</span>
+            <span class="tag">Website</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Project 4 -->
+
+      <div class="col-lg-4 fade-up">
+
+        <div class="project-card">
+
+          <div class="project-visual">
+            <i class="bi bi-building"></i>
+          </div>
+
+          <div class="project-content">
+
+            <h4>School Website</h4>
+
+            <p>
+              A modern, responsive school website concept with
+              academic information, facilities and student-focused content.
+            </p>
+
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Bootstrap</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Project 5 -->
+
+      <div class="col-lg-4 fade-up">
+
+        <div class="project-card">
+
+          <div class="project-visual">
+            <i class="bi bi-person-badge"></i>
+          </div>
+
+          <div class="project-content">
+
+            <h4>Personal Portfolio</h4>
+
+            <p>
+              This portfolio website showcasing my education,
+              skills, projects, achievements and journey.
+            </p>
+
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Project 6 -->
+
+      <div class="col-lg-4 fade-up">
+
+        <div class="project-card">
+
+          <div class="project-visual">
+            <i class="bi bi-camera-reels"></i>
+          </div>
+
+          <div class="project-content">
+
+            <h4>Prabesh Sports Hub</h4>
+
+            <p>
+              A sports content platform focused on karate videos,
+              competitions, training and athletic journey.
+            </p>
+
+            <span class="tag">Sports</span>
+            <span class="tag">Content</span>
+            <span class="tag">YouTube</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= VALUES ================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="row justify-content-center">
+
+      <div class="col-lg-8 text-center fade-up">
+
+        <div class="section-label">
+          My Mindset
+        </div>
+
+        <h2 class="section-title">
+          Learn. Build. Improve. Repeat.
+        </h2>
+
+        <p class="section-description mx-auto">
+          I believe progress comes from consistent small steps.
+          Whether it is technology, education, business or karate,
+          my goal is to keep learning and become better every day.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6 fade-up">
+
+          <div class="section-label">
+            Contact
+          </div>
+
+          <h2 class="section-title">
+            Let's create<br>
+            something useful.
+          </h2>
+
+          <p class="section-description">
+            Have a project idea, collaboration opportunity or simply
+            want to connect? Feel free to reach out.
+          </p>
+
+        </div>
+
+
+        <div class="col-lg-6 fade-up">
+
+          <!-- Replace these with your actual contact details -->
+
+          <a
+            href="https://mail.google.com/"
+            class="contact-link"
+          >
+            <i class="bi bi-envelope"></i>
+            <span>Email</span>
+          </a>
+
+
+          <a
+            href="https://www.facebook.com/prabeshmalla88"
+            target="_blank"
+            class="contact-link"
+          >
+            <i class="bi bi-facebook"></i>
+            <span>Facebook</span>
+          </a>
+
+
+          <a
+            href="https://www.instagram.com/prabeshmalla88"
+            target="_blank"
+            class="contact-link"
+          >
+            <i class="bi bi-instagram"></i>
+            <span>Instagram</span>
+          </a>
+
+
+          <a
+            href="http://www.youtube.com/@Prabeshsportshub"
+            target="_blank"
+            class="contact-link"
+          >
+            <i class="bi bi-youtube"></i>
+            <span>Prabesh Sports Hub</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+
+      <div>
+        © <span id="year"></span>
+        <strong>Prabesh Malla</strong>.
+        All rights reserved.
+      </div>
+
+      <div class="social-icons">
+
+        <a href="#" aria-label="Facebook">
+          <i class="bi bi-facebook"></i>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="YouTube">
+          <i class="bi bi-youtube"></i>
+        </a>
+
+        <a href="#" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- Back to Top -->
+
+<button id="topBtn" onclick="topFunction()">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+
+<!-- ================= BOOTSTRAP JS ================= -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script>
+
+  /* ================= CURRENT YEAR ================= */
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+  /* ================= SCROLL ANIMATION ================= */
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.12
+    }
+  );
+
+
+  document.querySelectorAll(".fade-up").forEach(element => {
+    observer.observe(element);
+  });
+
+
+  /* ================= BACK TO TOP ================= */
+
+  const topBtn = document.getElementById("topBtn");
+
+  window.addEventListener("scroll", function () {
+
+    if (
+      document.body.scrollTop > 400 ||
+      document.documentElement.scrollTop > 400
+    ) {
+
+      topBtn.style.display = "block";
+
+    } else {
+
+      topBtn.style.display = "none";
+
+    }
+
+  });
+
+
+  function topFunction() {
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  /* ================= NAVBAR ACTIVE LINK ================= */
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+      const sectionTop = section.offsetTop - 120;
+
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+
+    });
+
+    navLinks.forEach(link => {
+
+      link.classList.remove("active");
+
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+
+    });
+
+  });
+
+
+  /* ================= CLOSE MOBILE MENU ================= */
+
+  document.querySelectorAll(".nav-link").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      const menu = document.getElementById("navbarNav");
+
+      if (menu.classList.contains("show")) {
+
+        const bsCollapse =
+          bootstrap.Collapse.getInstance(menu);
+
+        if (bsCollapse) {
+          bsCollapse.hide();
+        }
+
+      }
+
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
